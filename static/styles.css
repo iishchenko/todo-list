@@ -1,0 +1,22 @@
+/* styles.css */
+.header-container {
+    display: flex;
+    align-items: center;  /* Aligns both items vertically in the center */
+}
+
+.header-container h1 {
+    margin-right: auto;  /* Ensures the heading stays to the left */
+    margin: 0;           /* Optional: Reset the margin to avoid extra space */
+}
+
+.add-task-btn {
+    text-decoration: none;        /* Removes underline from the link */
+    background-color: #007bff;    /* Button background color */
+    color: white;                 /* Text color */
+    padding: 8px 15px;            /* Padding inside the button */
+    border-radius: 4px;           /* Rounded corners */
+}
+
+.add-task-btn:hover {
+    background-color: #0056b3;    /* Button color on hover */
+}
