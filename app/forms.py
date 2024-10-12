@@ -1,8 +1,14 @@
 from django import forms
-from app.models import Todo
+from app.models import Task, Tag
 
 
-class TodoForm(forms.ModelForm):
+class TaskForm(forms.ModelForm):
     class Meta:
-        model = Todo
-        fields = ['title', 'completed']
+        model = Task
+        fields = ['content', 'deadline', 'tags']
+
+
+class TagForm(forms.ModelForm):
+    class Meta:
+        model = Tag
+        fields = ['name']

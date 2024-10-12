@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="header-container">
+    <h1>TODO List</h1>
+    <a href="{% url 'add_task' %}" class="add-task-btn">Add Task</a>
+</div>
+
+<ul>
+    {% for task in tasks %}
+    <li>
+        {{ task.content }} - Created: {{ task.created_at }}{% if task.deadline %} - Deadline: {{ task.deadline|date:"Y-m-d H:i" }}{% endif %}
+        <a href="{% url 'update_task' task.pk %}">Update</a>
+        <a href="{% url 'delete_task' task.pk %}">Delete</a>
+        <form action="{% url 'complete_task' task.pk %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">{{ task.completed|yesno:"Undo,Complete" }}</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
