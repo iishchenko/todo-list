@@ -1,0 +1,10 @@
+<h1>Todo List</h1>
+<ul>
+    {% for todo in todos %}
+    <li>
+        {{ todo.title }} - {{ todo.completed }}
+        <a href="{% url 'update_todo' todo.pk %}">Edit</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_todo' %}">Add Todo</a>
