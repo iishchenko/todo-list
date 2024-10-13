@@ -28,5 +28,3 @@ urlpatterns = [
     path('update_tag/<int:pk>/', UpdateTagView.as_view(), name='update_tag'),
     path('delete_tag/<int:pk>/', DeleteTagView.as_view(), name='delete_tag'),
 ]
-
-
